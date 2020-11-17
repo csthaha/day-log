@@ -3,6 +3,7 @@
  */
 
 Object.prototype._map = function(fn, arg1) {
+    console.log(this, this.a) // this指向，谁调用它指向谁
     if(typeof fn != 'function') {
         throw new TypeError(`${fn} is not a function`)
     }
