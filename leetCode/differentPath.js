@@ -32,18 +32,3 @@
 // };
 // console.log(uniquePaths(3, 7));
 
-
-var kthSmallest = function(root, k) {
-    if(!root) return -1;
-    var arr = [];
-    function tree(root) {
-        root.left ? arr.push(root.left) : arr.push(null);
-        root.right ? arr.push(root.right) : arr.push(null);
-        arr.push(root);
-    }
-    tree(root);
-    arr.sort((a,b) => a-b)
-    return arr[k - 1]
-};
-
-console.log(kthSmallest())
