@@ -72,3 +72,5 @@ if ([0]) {
 
  proxyObj.age = 'twenty Four'
  console.log('proxy obj.age: ', proxyObj.age)
+
+ console.log(64 >> 2);
