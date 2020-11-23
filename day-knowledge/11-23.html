@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .btn {
+        width: 100px;
+        height: 30px;
+    }
+    button {
+        width: 100%;
+        height: 100%;
+        background-color: aqua;
+        border: none;
+        color: red;
+        outline: none;
+    }
+</style>
+<body>
+    <div id="btn" class="btn">
+        <button id="button">防抖</button>
+    </div>
+    <script>
+        function _debounce(fn, time) {
+            let timer;
+            return function() {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    fn.call(this, ...arguments)
+                }, time)
+            }
+        }
+        function log() {
+            let button = document.getElementById("button")
+            button.style.color = '#fff'
+            button.style.outline = 'none'
+        }
+
+        // let btn = document.getElementById("btn")
+        // console.log(btn)
+        // btn.addEventListener('click', _debounce(log, 2000))
+        let btn = document.getElementById("btn")
+        // btn.onmouseover(function() {
+        //     _debounce(log, 2000)
+        // })
+        
+    </script>
+</body>
+</html>
