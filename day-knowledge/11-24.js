@@ -24,3 +24,11 @@ function use_log() {
  */
 
 use_log()
+
+
+var arr = {}
+var exam = ['a','g','g','c','b']
+for(let ele of exam) {
+    arr.hasOwnProperty(ele) ? arr[ele]++ : arr[ele] = 1
+}
+console.log(arr);
