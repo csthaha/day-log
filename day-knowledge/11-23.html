@@ -26,26 +26,40 @@
     <script>
         function _debounce(fn, time) {
             let timer;
+            console.log('_debounce 事件');
             return function() {
                 clearTimeout(timer);
                 timer = setTimeout(() => {
                     fn.call(this, ...arguments)
                 }, time)
-            }
+            }()
         }
         function log() {
             let button = document.getElementById("button")
             button.style.color = '#fff'
             button.style.outline = 'none'
+            console.log('2000ms 打印');
         }
 
-        // let btn = document.getElementById("btn")
-        // console.log(btn)
-        // btn.addEventListener('click', _debounce(log, 2000))
+        const log_debounce = _debounce(log, 3000)
+
         let btn = document.getElementById("btn")
+        // console.log(btn)
+        // btn.addEventListener('click', function() {
+        //     console.log('点击事件', _debounce(log, 2000));
+        //     // log_debounce()
+        //    _debounce(log, 2000)()
+        // })
+        // let btn = document.getElementById("btn")
         // btn.onmouseover(function() {
         //     _debounce(log, 2000)
         // })
+
+        // function use_debounce() {
+        //     _debounce(log, 2000)
+        // }
+        
+        btn.addEventListener('click', _debounce(log, 2000))
         
     </script>
 </body>
